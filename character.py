@@ -2,6 +2,19 @@ import math
 import random
 
 from functions import name_generator, ability_generator
+from backgrounds.acolyte import acolyte_background
+from backgrounds.charlatan import charlatan_background
+from backgrounds.criminal import criminal_background
+from backgrounds.entertainer import entertainer_background
+from backgrounds.folk_hero import folk_hero_background
+from backgrounds.guild_artisan import guild_artisan_background
+from backgrounds.hermit import hermit_background
+from backgrounds.noble import noble_background
+from backgrounds.outlander import outlander_background
+from backgrounds.sage import sage_background
+from backgrounds.sailor import sailor_background
+from backgrounds.soldier import soldier_background
+from backgrounds.urchin import urchin_background
 
 character = {}
 
@@ -193,6 +206,82 @@ character["CON Mod"] = math.floor((character["CON"] - 10) / 2)
 character["INT Mod"] = math.floor((character["INT"] - 10) / 2)
 character["WIS Mod"] = math.floor((character["WIS"] - 10) / 2)
 character["CHA Mod"] = math.floor((character["CHA"] - 10) / 2)
+
+match character["Background"]:
+    case "acolyte":
+        character["Personality Trait"] = acolyte_background()[0]
+        character["Ideal"] = acolyte_background()[1]
+        character["Bond"] = acolyte_background()[2]
+        character["Flaw"] = acolyte_background()[3]
+    case "charlatan":
+        character["Personality Trait"] = charlatan_background()[0]
+        character["Ideal"] = charlatan_background()[1]
+        character["Bond"] = charlatan_background()[2]
+        character["Flaw"] = charlatan_background()[3]
+        character["Scam"] = charlatan_background()[4]
+    case "criminal":
+        character["Personality Trait"] = criminal_background()[0]
+        character["Ideal"] = criminal_background()[1]
+        character["Bond"] = criminal_background()[2]
+        character["Flaw"] = criminal_background()[3]
+        character["Speciality"] = criminal_background()[4]
+    case "entertainer":
+        character["Personality Trait"] = entertainer_background()[0]
+        character["Ideal"] = entertainer_background()[1]
+        character["Bond"] = entertainer_background()[2]
+        character["Flaw"] = entertainer_background()[3]
+        character["Routine"] = entertainer_background()[4]
+    case "folk hero":
+        character["Personality Trait"] = folk_hero_background()[0]
+        character["Ideal"] = folk_hero_background()[1]
+        character["Bond"] = folk_hero_background()[2]
+        character["Flaw"] = folk_hero_background()[3]
+        character["Defining Event"] = folk_hero_background()[4]
+    case "guild artisan":
+        character["Personality Trait"] = guild_artisan_background()[0]
+        character["Ideal"] = guild_artisan_background()[1]
+        character["Bond"] = guild_artisan_background()[2]
+        character["Flaw"] = guild_artisan_background()[3]
+        character["Guild Business"] = guild_artisan_background()[4]
+    case "hermit":
+        character["Personality Trait"] = hermit_background()[0]
+        character["Ideal"] = hermit_background()[1]
+        character["Bond"] = hermit_background()[2]
+        character["Flaw"] = hermit_background()[3]
+        character["Life of Seclusion"] = hermit_background()[4]
+    case "noble":
+        character["Personality Trait"] = noble_background()[0]
+        character["Ideal"] = noble_background()[1]
+        character["Bond"] = noble_background()[2]
+        character["Flaw"] = noble_background()[3]
+    case "outlander":
+        character["Personality Trait"] = outlander_background()[0]
+        character["Ideal"] = outlander_background()[1]
+        character["Bond"] = outlander_background()[2]
+        character["Flaw"] = outlander_background()[3]
+        character["Origin"] = outlander_background()[4]
+    case "sage":
+        character["Personality Trait"] = sage_background()[0]
+        character["Ideal"] = sage_background()[1]
+        character["Bond"] = sage_background()[2]
+        character["Flaw"] = sage_background()[3]
+        character["Speciality"] = sage_background()[4]
+    case "sailor":
+        character["Personality Trait"] = sailor_background()[0]
+        character["Ideal"] = sailor_background()[1]
+        character["Bond"] = sailor_background()[2]
+        character["Flaw"] = sailor_background()[3]
+    case "soldier":
+        character["Personality Trait"] = soldier_background()[0]
+        character["Ideal"] = soldier_background()[1]
+        character["Bond"] = soldier_background()[2]
+        character["Flaw"] = soldier_background()[3]
+        character["Speciality"] = soldier_background()[4]
+    case "urchin":
+        character["Personality Trait"] = urchin_background()[0]
+        character["Ideal"] = urchin_background()[1]
+        character["Bond"] = urchin_background()[2]
+        character["Flaw"] = urchin_background()[3]
 
 print(f"{character['Name']} ({character['Gender'].title()})")
 print(f"{character['Race'].title()}, {character['Character Class'].title()} {character['Background'].title()}")

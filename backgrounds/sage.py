@@ -1,5 +1,3 @@
-# proficiency: arcana, history
-
 import random
 
 

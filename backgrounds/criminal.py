@@ -1,5 +1,3 @@
-# proficiency: deception, stealth
-
 import random
 
 

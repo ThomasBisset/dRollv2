@@ -1,5 +1,3 @@
-# proficiency: athletics, perception
-
 import random
 
 

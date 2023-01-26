@@ -1,5 +1,3 @@
-# proficiency: athletics, survival
-
 import random
 
 

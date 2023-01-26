@@ -1,5 +1,3 @@
-# proficiency: insight and religion
-
 import random
 
 

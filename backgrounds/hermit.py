@@ -1,5 +1,3 @@
-# proficiency: medicine, religion
-
 import random
 
 

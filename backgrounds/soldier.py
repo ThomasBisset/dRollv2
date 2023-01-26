@@ -1,5 +1,3 @@
-# proficiency: athletics, intimidation
-
 import random
 
 

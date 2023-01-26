@@ -1,5 +1,3 @@
-# proficiency: history, persuasion
-
 import random
 
 

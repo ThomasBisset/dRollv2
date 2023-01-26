@@ -1,5 +1,3 @@
-# proficiency: deception and sleight of hand
-
 import random
 
 

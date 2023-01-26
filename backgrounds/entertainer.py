@@ -1,5 +1,3 @@
-# proficiency: acrobatics, performance
-
 import random
 
 

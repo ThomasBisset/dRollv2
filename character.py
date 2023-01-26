@@ -283,11 +283,24 @@ match character["Background"]:
         character["Bond"] = urchin_background()[2]
         character["Flaw"] = urchin_background()[3]
 
-print(f"{character['Name']} ({character['Gender'].title()})")
-print(f"{character['Race'].title()}, {character['Character Class'].title()} {character['Background'].title()}")
+print()
+print(f" |------------------------------| ")
+print(f" |     DUNGEONS AND DRAGONS     | ")
+print(f" |   Random Character Creator   | ")
+print(f" |------------------------------| ")
+print()
+print(f"NAME:                {character['Name']} ({character['Gender'].title()})")
+print(f"RACE AND CLASS:      {character['Race'].title()}, {character['Character Class'].title()} "
+      f"{character['Background'].title()}")
+print()
 print(f"STR: {character['STR']: <2} ({character['STR Mod']:+g})")
 print(f"DEX: {character['DEX']: <2} ({character['DEX Mod']:+g})")
 print(f"CON: {character['CON']: <2} ({character['CON Mod']:+g})")
 print(f"INT: {character['INT']: <2} ({character['INT Mod']:+g})")
 print(f"WIS: {character['WIS']: <2} ({character['WIS Mod']:+g})")
 print(f"CHA: {character['CHA']: <2} ({character['CHA Mod']:+g})")
+print()
+print(f"Personality Trait:   {character['Personality Trait']}")
+print(f"Ideal:               {character['Ideal']}")
+print(f"Bond:                {character['Bond']}")
+print(f"Flaw:                {character['Flaw']}")

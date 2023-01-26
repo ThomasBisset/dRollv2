@@ -20,7 +20,7 @@ def sage_background():
         "and everything to others.",
         "There's nothing I like more than a good mystery.",
         "I'm willing to listen to every side of an argument before I make my own judgment.",
-        "I… speak… slowly… when talking… to idiots,… which… almost… everyone… is… compared… to me.",
+        "I... speak... slowly... when talking... to idiots,... which... almost... everyone... is... compared... to me.",
         "I am horribly, horribly awkward in social situations.",
         "I'm convinced that people are always trying to steal my secrets."
     ]

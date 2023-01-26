@@ -1,7 +1,8 @@
 import math
 import random
 
-from functions import name_generator, ability_generator
+from functions import ability_generator
+from name_generator import name_generator
 from backgrounds.acolyte import acolyte_background
 from backgrounds.charlatan import charlatan_background
 from backgrounds.criminal import criminal_background
@@ -293,13 +294,32 @@ print(f"NAME:                {character['Name']} ({character['Gender'].title()})
 print(f"RACE AND CLASS:      {character['Race'].title()}, {character['Character Class'].title()} "
       f"{character['Background'].title()}")
 print()
-print(f"STR: {character['STR']: <2} ({character['STR Mod']:+g})")
-print(f"DEX: {character['DEX']: <2} ({character['DEX Mod']:+g})")
-print(f"CON: {character['CON']: <2} ({character['CON Mod']:+g})")
-print(f"INT: {character['INT']: <2} ({character['INT Mod']:+g})")
-print(f"WIS: {character['WIS']: <2} ({character['WIS Mod']:+g})")
-print(f"CHA: {character['CHA']: <2} ({character['CHA Mod']:+g})")
+print(f"STR:  {character['STR']: <2}  ({character['STR Mod']:+g})")
+print(f"DEX:  {character['DEX']: <2}  ({character['DEX Mod']:+g})")
+print(f"CON:  {character['CON']: <2}  ({character['CON Mod']:+g})")
+print(f"INT:  {character['INT']: <2}  ({character['INT Mod']:+g})")
+print(f"WIS:  {character['WIS']: <2}  ({character['WIS Mod']:+g})")
+print(f"CHA:  {character['CHA']: <2}  ({character['CHA Mod']:+g})")
 print()
+
+match character["Background"]:
+    case "charlatan":
+        print(f"Scam:                {character['Scam']}")
+    case "criminal" | "sage" | "soldier":
+        print(f"Speciality:          {character['Speciality']}")
+    case "entertainer":
+        print(f"Routine:             {character['Routine']}")
+    case "folk hero":
+        print(f"Defining Event:      {character['Defining Event']}")
+    case "guild artisan":
+        print(f"Guild Business:      {character['Guild Business']}")
+    case "hermit":
+        print(f"Life of Seclusion:   {character['Life of Seclusion']}")
+    case "outlander":
+        print(f"Origin:              {character['Origin']} ")
+    case _:
+        pass
+
 print(f"Personality Trait:   {character['Personality Trait']}")
 print(f"Ideal:               {character['Ideal']}")
 print(f"Bond:                {character['Bond']}")

@@ -2,20 +2,12 @@ import math
 import random
 
 from functions import ability_generator
+from backgrounds import acolyte_background, charlatan_background, criminal_background, entertainer_background, \
+    folk_hero_background, guild_artisan_background, hermit_background, noble_background, outlander_background, \
+    sage_background, sailor_background, soldier_background, urchin_background
 from name_generator import name_generator
-from backgrounds.acolyte import acolyte_background
-from backgrounds.charlatan import charlatan_background
-from backgrounds.criminal import criminal_background
-from backgrounds.entertainer import entertainer_background
-from backgrounds.folk_hero import folk_hero_background
-from backgrounds.guild_artisan import guild_artisan_background
-from backgrounds.hermit import hermit_background
-from backgrounds.noble import noble_background
-from backgrounds.outlander import outlander_background
-from backgrounds.sage import sage_background
-from backgrounds.sailor import sailor_background
-from backgrounds.soldier import soldier_background
-from backgrounds.urchin import urchin_background
+from xanathars import barbarian_xgte, bard_xgte, cleric_xgte, druid_xgte, fighter_xgte, monk_xgte, ranger_xgte, \
+    rogue_xgte, paladin_xgte, sorcerer_xgte, warlock_xgte, wizard_xgte
 
 character = {}
 
@@ -324,3 +316,57 @@ print(f"Personality Trait:   {character['Personality Trait']}")
 print(f"Ideal:               {character['Ideal']}")
 print(f"Bond:                {character['Bond']}")
 print(f"Flaw:                {character['Flaw']}")
+
+match character["Character Class"]:
+    case "barbarian":
+        print(f"Totem:               {barbarian_xgte()[0]}")
+        print(f"Tattoo:              {barbarian_xgte()[1]}")
+        print(f"Superstition:        {barbarian_xgte()[2]}")
+    case "bard":
+        print(f"Defining Work:       {bard_xgte()[0]}")
+        print(f"Instrument:          {bard_xgte()[1]}")
+        print(f"Embarrassment:       {bard_xgte()[2]}")
+    case "cleric":
+        print(f"Temple:              {cleric_xgte()[0]}")
+        print(f"Keepsake:            {cleric_xgte()[1]}")
+        print(f"Secret:              {cleric_xgte()[2]}")
+    case "druid":
+        print(f"Treasured Item:      {druid_xgte()[0]}")
+        print(f"Guiding Aspect:      {druid_xgte()[1]}")
+        print(f"Mentor:              {druid_xgte()[2]}")
+    case "fighter":
+        print(f"Heraldic Sign:       {fighter_xgte()[0]}")
+        print(f"Instructor:          {fighter_xgte()[1]}")
+        print(f"Signature Style:     {fighter_xgte()[2]}")
+    case "monk":
+        print(f"Monastery:           {monk_xgte()[0]}")
+        print(f"Monastic Icon:       {monk_xgte()[1]}")
+        print(f"Master:              {monk_xgte()[2]}")
+    case "paladin":
+        print(f"Personal Goal:       {paladin_xgte()[0]}")
+        print(f"Symbol:              {paladin_xgte()[1]}")
+        print(f"Nemesis:             {paladin_xgte()[2]}")
+        print(f"Temptation:          {paladin_xgte()[3]}")
+    case "ranger":
+        print(f"View of the World:   {monk_xgte()[0]}")
+        print(f"Homeland:            {monk_xgte()[1]}")
+        print(f"Sworn Enemy:         {monk_xgte()[2]}")
+    case "rogue":
+        print(f"Guilty Pleasure:     {rogue_xgte()[0]}")
+        print(f"Adversary:           {rogue_xgte()[1]}")
+        print(f"Benefactor:          {rogue_xgte()[2]}")
+    case "sorcerer":
+        print(f"Arcane Origin:       {sorcerer_xgte()[0]}")
+        print(f"Reactions:           {sorcerer_xgte()[1]}")
+        print(f"Supernatural Mark:   {sorcerer_xgte()[2]}")
+        print(f"Signs of Sorcery:    {sorcerer_xgte()[3]}")
+    case "warlock":
+        print(f"Patron Attitudes:    {warlock_xgte()[0]}")
+        print(f"Special Terms:       {warlock_xgte()[1]}")
+        print(f"Binding Mark:        {warlock_xgte()[2]}")
+    case "wizard":
+        print(f"Spellbook:           {wizard_xgte()[0]}")
+        print(f"Ambition:            {wizard_xgte()[1]}")
+        print(f"Eccentricity:        {wizard_xgte()[2]}")
+    case _:
+        pass

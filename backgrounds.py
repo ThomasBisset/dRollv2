@@ -43,12 +43,24 @@ def acolyte_background():
         "Once I pick a goal, I become obsessed with it to the detriment of everything else in my life."
     ]
 
+    acolyte_origin_xgte = [
+        "I ran away from home at an early age and found refuge in a temple.",
+        "My family gave me to a temple, since they were unable or unwilling to care for me.",
+        "I grew up in a household with strong religious convictions. Entering the service of one or more gods seemed "
+        "natural.",
+        "An impassioned sermon struck a chord deep in my soul and moved me to serve the faith.",
+        "I followed a childhood friend, a respected acquaintance, or someone I loved into religious service.",
+        "After encountering a true servant of the gods, I was so inspired that I immediately entered the service of a "
+        "religious group."
+    ]
+
     personality_trait = random.choice(acolyte_personality_trait)
     ideal = random.choice(acolyte_ideal)
     bond = random.choice(acolyte_bond)
     flaw = random.choice(acolyte_flaw)
+    origin_xgte = random.choice(acolyte_origin_xgte)
 
-    return personality_trait, ideal, bond, flaw
+    return personality_trait, ideal, bond, flaw, origin_xgte
 
 
 def charlatan_background():
@@ -102,13 +114,24 @@ def charlatan_background():
         "I hate to admit it and will hate myself for it, bit I'll run and preserve my own hide if the going gets tough."
     ]
 
+    charlatan_origin_xgte = [
+        "I was left to my own devices, and my knack for manipulating others helped me survive.",
+        "I learned early on that people are gullible and easy to exploit.",
+        "I often got in trouble, but I managed to talk my way out of it every time.",
+        "I took up with a confidence artist, from whom I learned my craft.",
+        "After a charlatan fleeced my family, I decided to learn the trade so I would never be fooled by such "
+        "deception again.",
+        "I was poor or I feared becoming poor, so I learned the tricks I needed to keep myself out of poverty."
+    ]
+
     scam = random.choice(charlatan_scam)
     personality_trait = random.choice(charlatan_personality_trait)
     ideal = random.choice(charlatan_ideal)
     bond = random.choice(charlatan_bond)
     flaw = random.choice(charlatan_flaw)
+    origin_xgte = random.choice(charlatan_origin_xgte)
 
-    return personality_trait, ideal, bond, flaw, scam
+    return personality_trait, ideal, bond, flaw, scam, origin_xgte
 
 
 def criminal_background():
@@ -163,13 +186,24 @@ def criminal_background():
         "An innocent person is in prison for a crime I committed. I'm okay with that."
     ]
 
+    criminal_origin_xgte = [
+        "I resented authority in my younger days and saw a life of crime as the best way to fight against tyranny and "
+        "oppression.",
+        "Necessity forced me to take up the life, since it was the only way I could survive.",
+        "I fell in with a gang of reprobates and ne'er-do wells, and I learned my specialty from them.",
+        "A parent or relative taught me my criminal specialty to prepare me for the family business.",
+        "I left home and found a place in a thieves' guild or some other criminal organization.",
+        "I was always bored, so I turned to crime to pass the time and discovered I was quite good at it."
+    ]
+
     specialty = random.choice(criminal_speciality)
     personality_trait = random.choice(criminal_personality_trait)
     ideal = random.choice(criminal_ideal)
     bond = random.choice(criminal_bond)
     flaw = random.choice(criminal_flaw)
+    origin_xgte = random.choice(criminal_origin_xgte)
 
-    return personality_trait, ideal, bond, flaw, specialty
+    return personality_trait, ideal, bond, flaw, specialty, origin_xgte
 
 
 def entertainer_background():
@@ -225,13 +259,24 @@ def entertainer_background():
         "Despite my best efforts, I am unreliable to my friends."
     ]
 
+    entertainer_origin_xgte = [
+        "Members of my family made ends meet by performing, so it was fitting for me to follow their example.",
+        "I always had a keen insight into other people, enough so that I could make them laugh or cry with my stories "
+        "or songs.",
+        "I ran away from home to follow a minstrel troupe.",
+        "I saw a bard perform once, and I knew from that moment on what I was born to do.",
+        "I earned coin by performing on street corners and eventually made a name for myself.",
+        "A traveling entertainer took me in and taught me the trade.",
+    ]
+
     routine = random.choice(entertainer_routines)
     personality_trait = random.choice(entertainer_personality_trait)
     ideal = random.choice(entertainer_ideal)
     bond = random.choice(entertainer_bond)
     flaw = random.choice(entertainer_flaw)
+    origin_xgte = random.choice(entertainer_origin_xgte)
 
-    return personality_trait, ideal, bond, flaw, routine
+    return personality_trait, ideal, bond, flaw, routine, origin_xgte
 
 
 def folk_hero_background():
@@ -286,13 +331,23 @@ def folk_hero_background():
         "I have trouble trusting in my allies."
     ]
 
+    folk_hero_origin_xgte = [
+        "I learned what was right and wrong from my family.",
+        "I was always enamored by tales of heroes and wished I could be something more than ordinary.",
+        "I hated my mundane life, so when it was time for someone to step up and do the right thing, I took my chance.",
+        "A parent or one of my relatives was an adventurer, and I was inspired by that person's courage.",
+        "A mad old hermit spoke a prophecy when I was born, saying that I would accomplish great things.",
+        "I have always stood up for those who are weaker than I am."
+    ]
+
     defining_event = random.choice(folk_hero_defining_event)
     personality_trait = random.choice(folk_hero_personality_trait)
     ideal = random.choice(folk_hero_ideal)
     bond = random.choice(folk_hero_bond)
     flaw = random.choice(folk_hero_flaw)
+    origin_xgte = random.choice(folk_hero_origin_xgte)
 
-    return personality_trait, ideal, bond, flaw, defining_event
+    return personality_trait, ideal, bond, flaw, defining_event, origin_xgte
 
 
 def guild_artisan_background():
@@ -360,13 +415,23 @@ def guild_artisan_background():
         "I'm horribly jealous of anyone who can outshine my handiwork. Everywhere I go, I'm surrounded by rivals."
     ]
 
+    guild_artisan_origin_xgte = [
+        "I was apprenticed to a master who taught me the guild's business.",
+        "I helped a guild artisan keep a secret or complete a task, and in return I was taken on as an apprentice.",
+        "One of my family members who belonged to the guild made a place for me.",
+        "I was always good with my hands, so I took the opportunity to learn a trade.",
+        "I wanted to get away from my home situation and start a new life.",
+        "I learned the essentials of my craft from a mentor but had to join the guild to finish my training."
+    ]
+
     guild_business = random.choice(guild_business)
     personality_trait = random.choice(guild_artisan_personality_traits)
     ideal = random.choice(guild_artisan_ideal)
     bond = random.choice(guild_artisan_bonds)
     flaw = random.choice(guild_artisan_flaws)
+    origin_xgte = random.choice(guild_artisan_origin_xgte)
 
-    return personality_trait, ideal, bond, flaw, guild_business
+    return personality_trait, ideal, bond, flaw, guild_business, origin_xgte
 
 
 def hermit_background():
@@ -423,13 +488,24 @@ def hermit_background():
         "I like keeping secrets and won't share them with anyone."
     ]
 
+    hermit_origin_xgte = [
+        "My enemies ruined my reputation, and I fled to the wilds to avoid further disparagement.",
+        "I am comfortable with being isolated, as I seek inner peace.",
+        "I never liked the people I called my friends, so it was easy for me to strike out on my own.",
+        "I felt compelled to forsake my past, but did so with great reluctance, and sometimes I regret making that "
+        "decision.",
+        "I lost everything-my home, my family, my friends. Going it alone was all I could do.",
+        "Society's decadence disgusted me, so I decided to leave it behind."
+    ]
+
     life_of_seclusion = random.choice(hermit_life_of_seclusion)
     personality_trait = random.choice(hermit_personality_traits)
     ideal = random.choice(hermit_ideals)
     bond = random.choice(hermit_bonds)
     flaw = random.choice(hermit_flaw)
+    origin_xgte = random.choice(hermit_origin_xgte)
 
-    return personality_trait, ideal, bond, flaw, life_of_seclusion
+    return personality_trait, ideal, bond, flaw, life_of_seclusion, origin_xgte
 
 
 def noble_background():
@@ -476,12 +552,22 @@ def noble_background():
         "By my words and actions, I often bring shame to my family."
     ]
 
+    noble_origin_xgte = [
+        "I come from an old and storied family, and it fell to me to preserve the family name.",
+        "My family has been disgraced, and I intend to clear our name.",
+        "My family recently came by its title, and that elevation thrust us into a new and strange world.",
+        "My family has a title, but none of my ancestors have distinguished themselves since we gained it.",
+        "My family is filled with remarkable people. I hope to live up to their example.",
+        "I hope to increase my family's power and influence."
+    ]
+
     personality_trait = random.choice(noble_personality_trait)
     ideal = random.choice(noble_ideal)
     bond = random.choice(noble_bond)
     flaw = random.choice(noble_flaw)
+    origin_xgte = random.choice(noble_origin_xgte)
 
-    return personality_trait, ideal, bond, flaw
+    return personality_trait, ideal, bond, flaw, origin_xgte
 
 
 def outlander_background():
@@ -544,13 +630,23 @@ def outlander_background():
         "thrive and the weak perish.",
     ]
 
+    outlander_origin_xtge = [
+        "I spent a lot of time in the wilderness as a youngster, and I came to love that way of life.",
+        "From a young age, I couldn't abide the stink of the cities and preferred to spend my time in nature.",
+        "I came to understand the darkness that lurks in the wilds, and I vowed to combat it.",
+        "My people lived on the edges of civilization, and I learned the methods of survival from my family.",
+        "After a tragedy I retreated to the wilderness, leaving my old life behind.",
+        "My family moved away from civilization, and I learned to adapt to my new environment."
+    ]
+
     origin = random.choice(outlander_origin)
     personality_trait = random.choice(outlander_personality_trait)
     ideal = random.choice(outlander_ideals)
     bond = random.choice(outlander_bonds)
     flaw = random.choice(outlander_flaws)
+    origin_xgte = random.choice(outlander_origin_xtge)
 
-    return personality_trait, ideal, bond, flaw, origin
+    return personality_trait, ideal, bond, flaw, origin, origin_xgte
 
 
 def sage_background():
@@ -605,13 +701,26 @@ def sage_background():
         "I can't keep a secret to save my life, or anyone else's."
     ]
 
+    sage_origin_xgte = [
+        "I was naturally curious, so I packed up and went to a university to learn more about the world.",
+        "My mentor's teachings opened my mind to new possibilities in that field of study.",
+        "I was always an avid reader, and I learned much about my favorite topic on my own.",
+        "I discovered an old library and pored over the texts I found there. That experience awakened a hunger for "
+        "more knowledge.",
+        "I impressed a wizard who told me I was squandering my talents and should seek out an education to take "
+        "advantage of my gifts.",
+        "One of my parents or a relative gave me a basic education that whetted my appetite, and I left home to build "
+        "on what I had learned."
+    ]
+
     speciality = random.choice(sage_speciality)
     personality_trait = random.choice(sage_personality_trait)
     ideal = random.choice(sage_ideal)
     bond = random.choice(sage_bonds)
     flaw = random.choice(sage_flaws)
+    origin_xgte = random.choice(sage_origin_xgte)
 
-    return personality_trait, ideal, bond, flaw, speciality
+    return personality_trait, ideal, bond, flaw, speciality, origin_xgte
 
 
 def sailor_background():
@@ -655,12 +764,23 @@ def sailor_background():
         "My pride will probably lead to my destruction."
     ]
 
+    sailor_origin_xgte = [
+        "I was press-ganged by pirates and forced to serve on their ship until I finally escaped.",
+        "I wanted to see the world, so I signed on as a deckhand for a merchant ship.",
+        "One of my relatives was a sailor who took me to sea.",
+        "I needed to escape my community quickly, so I stowed away on a ship. When the crew found me, I was forced "
+        "to work for my passage.",
+        "Reavers attacked my community, so I found refuge on a ship until I could seek vengeance.",
+        "I had few prospects where I was living, so I left to find my fortune elsewhere."
+    ]
+
     personality_trait = random.choice(sailor_personality_trait)
     ideal = random.choice(sailor_ideals)
     bond = random.choice(sailor_bonds)
     flaw = random.choice(sailor_flaws)
+    origin_xgte = random.choice(sailor_origin_xgte)
 
-    return personality_trait, ideal, bond, flaw
+    return personality_trait, ideal, bond, flaw, origin_xgte
 
 
 def soldier_background():
@@ -715,13 +835,23 @@ def soldier_background():
         "I'd rather eat my armor than admit when I'm wrong.",
     ]
 
+    soldier_origin_xgte = [
+        "I joined the militia to help protect my community from monsters.",
+        "A relative of mine was a soldier, and I wanted to carry on the family tradition .",
+        "The local lord forced me to enlist in the army.",
+        "War ravaged my homeland while I was growing up. Fighting was the only life I ever knew.",
+        "I wanted fame and fortune, so I joined a mercenary company, selling my sword to the highest bidder.",
+        "Invaders attacked my homeland. It was my duty to take up arms in defense of my people."
+    ]
+
     soldier_speciality = random.choice(soldier_speciality)
     personality_trait = random.choice(soldier_personality_traits)
     ideal = random.choice(soldier_ideals)
     bond = random.choice(soldier_bonds)
     flaw = random.choice(soldier_flaws)
+    origin_xgte = random.choice(soldier_origin_xgte)
 
-    return personality_trait, ideal, bond, flaw, soldier_speciality
+    return personality_trait, ideal, bond, flaw, soldier_speciality, origin_xgte
 
 
 def urchin_background():
@@ -765,9 +895,19 @@ def urchin_background():
         "People who can't take care of themselves get what they deserve."
     ]
 
+    urchin_origin_xgte = [
+        "Wanderlust caused me to leave my family to see the world. I look after myself.",
+        "I ran away from a bad situation at home and made my own way in the world.",
+        "Monsters wiped out my village, and I was the sole survivor. I had to find a way to survive.",
+        "A notorious thief looked after me and other orphans, and we spied and stole to earn our keep.",
+        "One day I woke up on the streets, alone and hungry, with no memory of my early childhood.",
+        "My parents died, leaving no one to look after me. I raised myself."
+    ]
+
     personality_trait = random.choice(urchin_personality_trait)
     ideal = random.choice(urchin_ideals)
     bond = random.choice(urchin_bonds)
     flaw = random.choice(urchin_flaws)
+    origin_xgte = random.choice(urchin_origin_xgte)
 
-    return personality_trait, ideal, bond, flaw
+    return personality_trait, ideal, bond, flaw, origin_xgte

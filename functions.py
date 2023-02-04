@@ -1,4 +1,5 @@
 import random
+import math
 
 
 def roll(d, x):
@@ -22,3 +23,8 @@ def ability_generator():
         abilities_list.append(sum(ability_roll()))
         abilities_list.sort(reverse=True)
     return abilities_list
+
+
+def modifier_calculator(ability):
+    modifier = math.floor((ability - 10) / 2)
+    return modifier

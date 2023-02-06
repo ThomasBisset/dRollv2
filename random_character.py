@@ -1,6 +1,6 @@
 import random
 
-from functions import ability_generator, modifier_calculator
+from functions import ability_generator, modifier_calculator, height_weight_calculator
 from name_generator import name_generator
 from backgrounds import acolyte_background, charlatan_background, criminal_background, entertainer_background, \
     folk_hero_background, guild_artisan_background, hermit_background, noble_background, outlander_background, \
@@ -42,18 +42,26 @@ def random_character():
             character['Race'] = f"{variant} {character['Race']}"
             character['Gender'] = random.choice(["male", "female"])
             character['Name'] = name_generator("dwarf", character['Gender'])
+            character['Height'] = height_weight_calculator(character['Race'])[0]
+            character['Weight'] = height_weight_calculator(character['Race'])[1]
         case "elf":
             variant = random.choice(elf_variants)
             character['Race'] = f"{variant} {character['Race']}"
             character['Gender'] = random.choice(["male", "female", "child"])
             character['Name'] = name_generator("elf", character['Gender'])
+            character['Height'] = height_weight_calculator(character['Race'])[0]
+            character['Weight'] = height_weight_calculator(character['Race'])[1]
         case "halfling":
             variant = random.choice(halfling_variants)
+            character['Height'] = height_weight_calculator(character['Race'])[0]
+            character['Weight'] = height_weight_calculator(character['Race'])[1]
             character['Race'] = f"{variant} {character['Race']}"
             character['Gender'] = random.choice(["male", "female"])
             character['Name'] = name_generator("halfling", character['Gender'])
         case "human":
             variant = random.choice(human_variants)
+            character['Height'] = height_weight_calculator(character['Race'])[0]
+            character['Weight'] = height_weight_calculator(character['Race'])[1]
             character['Race'] = f"{variant} {character['Race']}"
             character['Gender'] = random.choice(["male", "female"])
             if variant == "chondathan" or variant == "tethyrian":
@@ -66,12 +74,16 @@ def random_character():
             character['Race'] = f"{variant} {character['Race']}"
             character['Gender'] = random.choice(["male", "female", "child"])
             character['Name'] = name_generator("dragonborn", character['Gender'])
+            character['Height'] = height_weight_calculator(character['Race'])[0]
+            character['Weight'] = height_weight_calculator(character['Race'])[1]
         case "gnome":
             variant = random.choice(gnome_variants)
             character['Race'] = f"{variant} {character['Race']}"
             character['Gender'] = random.choice(["male", "female"])
             nickname = random.choice([0, 1])
             character['Name'] = name_generator("gnome", character['Gender'], gnome_nickname=nickname)
+            character['Height'] = height_weight_calculator(character['Race'])[0]
+            character['Weight'] = height_weight_calculator(character['Race'])[1]
         case "half-elf":
             human_or_elf = random.choice(["human", "elf"])
             if human_or_elf == "human":
@@ -85,14 +97,20 @@ def random_character():
             elif human_or_elf == "elf":
                 character['Gender'] = random.choice(["male", "female", "child"])
                 character['Name'] = name_generator("elf", character['Gender'])
+            character['Height'] = height_weight_calculator(character['Race'])[0]
+            character['Weight'] = height_weight_calculator(character['Race'])[1]
         case "half-orc":
             character['Gender'] = random.choice(["male", "female"])
             character['Name'] = name_generator("orc", character['Gender'])
+            character['Height'] = height_weight_calculator(character['Race'])[0]
+            character['Weight'] = height_weight_calculator(character['Race'])[1]
         case "tiefling":
             character['Gender'] = random.choice(["male", "female", "virtue"])
             character['Name'] = name_generator("tiefling", character['Gender'])
             if character['Gender'] == "virtue":
                 character["Gender"] = "neutral"
+            character['Height'] = height_weight_calculator(character['Race'])[0]
+            character['Weight'] = height_weight_calculator(character['Race'])[1]
         case _:
             print("Error")
             exit()
@@ -243,13 +261,6 @@ def random_character():
             print("Error")
             exit()
 
-    character["STR Mod"] = modifier_calculator(character["STR"])
-    character["DEX Mod"] = modifier_calculator(character["DEX"])
-    character["CON Mod"] = modifier_calculator(character["CON"])
-    character["INT Mod"] = modifier_calculator(character["INT"])
-    character["WIS Mod"] = modifier_calculator(character["WIS"])
-    character["CHA Mod"] = modifier_calculator(character["CHA"])
-
     match character["Background"]:
         case "acolyte":
             character["Personality Trait"] = acolyte_background()[0]
@@ -325,5 +336,60 @@ def random_character():
             character["Ideal"] = urchin_background()[1]
             character["Bond"] = urchin_background()[2]
             character["Flaw"] = urchin_background()[3]
+
+    match character["Race"]:
+        case "hill dwarf":
+            character["CON"] = character["CON"] + 2
+            character["WIS"] = character["WIS"] + 1
+        case "mountain dwarf":
+            character["CON"] = character["CON"] + 2
+            character["STR"] = character["STR"] + 2
+        case "high elf":
+            character["DEX"] = character["DEX"] + 2
+            character["INT"] = character["INT"] + 1
+        case "wood elf":
+            character["DEX"] = character["DEX"] + 2
+            character["WIS"] = character["WIS"] + 1
+        case "wood elf":
+            character["DEX"] = character["DEX"] + 2
+            character["CHA"] = character["CHA"] + 1
+        case "lightfoot halfling":
+            character["DEX"] = character["DEX"] + 2
+            character["CHA"] = character["CHA"] + 1
+        case "stout halfling":
+            character["DEX"] = character["DEX"] + 2
+            character["CON"] = character["CON"] + 1
+        case "forest gnome":
+            character["INT"] = character["INT"] + 2
+            character["DEX"] = character["DEX"] + 1
+        case "rock gnome":
+            character["INT"] = character["INT"] + 2
+            character["CON"] = character["CON"] + 1
+        case "half-elf":
+            character["CHA"] = character["CHA"] + 2
+        case "half-orc":
+            character["STR"] = character["STR"] + 2
+            character["CON"] = character["CON"] + 1
+        case "tiefling":
+            character["CHA"] = character["CHA"] + 2
+            character["INT"] = character["INT"] + 1
+        case _:
+            if character["Race"][-5:] == "human":
+                character["STR"] = character["STR"] + 1
+                character["DEX"] = character["DEX"] + 1
+                character["CON"] = character["CON"] + 1
+                character["INT"] = character["INT"] + 1
+                character["WIS"] = character["WIS"] + 1
+                character["CHA"] = character["CHA"] + 1
+            elif character["Race"][-10:] == "dragonborn":
+                character["STR"] = character["STR"] + 2
+                character["CHA"] = character["CHA"] + 1
+
+    character["STR Mod"] = modifier_calculator(character["STR"])
+    character["DEX Mod"] = modifier_calculator(character["DEX"])
+    character["CON Mod"] = modifier_calculator(character["CON"])
+    character["INT Mod"] = modifier_calculator(character["INT"])
+    character["WIS Mod"] = modifier_calculator(character["WIS"])
+    character["CHA Mod"] = modifier_calculator(character["CHA"])
 
     return character

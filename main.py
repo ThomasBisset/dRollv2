@@ -1,12 +1,23 @@
 from random_character import random_character
+from functions import height_conversion_ft_in
 
 if __name__ == "__main__":
     character = random_character()
 
-    print(f"{character['Name'].title()}; the "
+    print()
+    print(f">>>>> D&D Random Character >>>>>")
+    print()
+
+    print(f"{character['Name'].title()} "
+          f"({character['Gender']}); the "
           f"{character['Race'].title()}, "
           f"{character['Background'].title()} "
           f"{character['Character Class'].title()}")
+
+    print(f"Height: {height_conversion_ft_in(character['Height'])}  |  "
+          f"Weight: {character['Weight']}lbs")
+
+    print()
 
     print(f"STR: {character['STR']} ({character['STR Mod']})  |  "
           f"DEX: {character['DEX']} ({character['DEX Mod']})  |  "
@@ -15,6 +26,8 @@ if __name__ == "__main__":
           f"WIS: {character['WIS']} ({character['WIS Mod']})  |  "
           f"CHA: {character['CHA']} ({character['CHA Mod']})")
 
+    print()
+
     print(f"Personality Trait:  {character['Personality Trait']}")
     print(f"Ideal:              {character['Ideal']}")
     print(f"Bond:               {character['Bond']}")
@@ -22,30 +35,30 @@ if __name__ == "__main__":
 
     match character['Character Class']:
         case "barbarian":
-            print(f"Totem:              {character['Totem']}")
-            print(f"Tattoo:             {character['Tattoo']}")
-            print(f"Superstition:       {character['Superstition']}")
-            print(f"Reason for Being:   {character['Reason for Being']}")
+            print(f'Totem:              {character["Totem"]}')
+            print(f'Tattoo:             {character["Tattoo"]}')
+            print(f'Superstition:       {character["Superstition"]}')
+            print(f'Reason for Being:   {character["Reason for Being"]}')
         case "bard":
-            print(f"Defining Work:      {character['Defining Work']}")
-            print(f"Instrument:         {character['Instrument']}")
-            print(f"Embarrassment:      {character['Embarrassment']}")
-            print(f"Reason for Being:   {character['Reason for Being']}")
+            print(f'Defining Work:      {character["Defining Work"]}')
+            print(f'Instrument:         {character["Instrument"]}')
+            print(f'Embarrassment:      {character["Embarrassment"]}')
+            print(f'Reason for Being:   {character["Reason for Being"]}')
         case "cleric":
-            print(f"Temple:             {character['Temple']}")
-            print(f"Keepsake:           {character['Keepsake']}")
-            print(f"Secret:             {character['Secret']}")
-            print(f"Reason for Being:   {character['Reason for Being']}")
+            print(f'Temple:             {character["Temple"]}')
+            print(f'Keepsake:           {character["Keepsake"]}')
+            print(f'Secret:             {character["Secret"]}')
+            print(f'Reason for Being:   {character["Reason for Being"]}')
         case "druid":
-            print(f"Treasured Item:     {character['Treasured Item']}")
-            print(f"Guiding Aspect:     {character['Guiding Aspect']}")
-            print(f"Mentor:             {character['Mentor']}")
-            print(f"Reason for Being:   {character['Reason for Being']}")
+            print(f'Treasured Item:     {character["Treasured Item"]}')
+            print(f'Guiding Aspect:     {character["Guiding Aspect"]}')
+            print(f'Mentor:             {character["Mentor"]}')
+            print(f'Reason for Being:   {character["Reason for Being"]}')
         case "fighter":
-            print(f"Heraldic Sign:      {character['Heraldic Sign']}")
-            print(f"Instructor:         {character['Instructor']}")
-            print(f"Signature Style:    {character['Signature Style']}")
-            print(f"Reason for Being:   {character['Reason for Being']}")
+            print(f'Heraldic Sign:      {character["Heraldic Sign"]}')
+            print(f'Instructor:         {character["Instructor"]}')
+            print(f'Signature Style:    {character["Signature Style"]}')
+            print(f'Reason for Being:   {character["Reason for Being"]}')
         case "monk":
             print(f'Monastery:          {character["Monastery"]}')
             print(f'Monastic Icons:     {character["Monastic Icons"]}')

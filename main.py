@@ -1,6 +1,7 @@
 from random_character import random_character
 from functions import height_conversion_ft_in
 
+
 if __name__ == "__main__":
     character = random_character()
 

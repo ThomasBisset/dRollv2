@@ -19,7 +19,7 @@ def ability_roll():
 
 def ability_generator():
     abilities_list = []
-    for loop in range(6):
+    for i in range(6):
         abilities_list.append(sum(ability_roll()))
         abilities_list.sort(reverse=True)
     return abilities_list
